@@ -61,7 +61,7 @@ Options                                                                    |
     color: rgb(212, 207, 205);
     position: absolute; 
     left: 10px;
-    top: 375px;
+    top: 70vh;
     filter: brightness(1);
     filter: contrast(5);
 }
@@ -89,7 +89,7 @@ Options                                                                    |
 
 #check1 {
     position: absolute;
-    top: 525px;
+    top: 85vh;
     left: 40px;
 }
 
@@ -110,6 +110,7 @@ Options                                                                    |
     border-radius: 3px;
     margin: 0%;
     position: absolute;
-    top: 90vh;
+    top: 80vh;
+    padding: 5px;
 }
 /* Old Code! */
