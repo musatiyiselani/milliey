@@ -1,7 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
-    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,6 +43,14 @@ Background stuff                                                           |
     filter: brightness(0.75);
 }
 
+.story {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+}
+
 /* 
 ----------------------------------------------------------------------------
 Background stuff                                                           |
@@ -55,6 +73,7 @@ Options                                                                    |
 ----------------------------------------------------------------------------
 */
 
+#form,
 #form1 {
     font-size: x-large;
     font-weight: bold;
@@ -118,3 +137,20 @@ Options                                                                    |
     padding: 5px;
 }
 /* Old Code! */
+
+
+.check_screen {
+    background-color: bisque;
+    border: 2px solid rgb(129, 91, 91);
+    color: brown;
+    text-align: center;
+    position: absolute;
+    padding: 10%;
+    top: 40vh;
+    left: 10px;
+    right: 10px;
+    margin: 0%;
+    display: none;
+    font-weight: bold;
+    font-size: x-large;
+}
