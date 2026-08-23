@@ -35,10 +35,7 @@ Background stuff                                                           |
     object-fit: cover;
 }
 
-.bckpic {
-    filter: brightness(1.05);
-}
-
+.bckpic,
 #vid1 {
     filter: brightness(0.75);
 }
@@ -73,14 +70,14 @@ Options                                                                    |
 ----------------------------------------------------------------------------
 */
 
-#form,
-#form1 {
+#form1,
+#form2 {
     font-size: x-large;
     font-weight: bold;
     color: rgb(212, 207, 205);
     position: absolute; 
     left: 10px;
-    top: 70vh;
+    top: 60vh;
     filter: brightness(1);
     filter: contrast(5);
 }
@@ -91,22 +88,30 @@ Options                                                                    |
 ----------------------------------------------------------------------------
 */
 
-#Q1,
+#Q1 {
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    position: absolute; 
+    text-align: center;
+    filter: contrast(1);
+}
+
+
 #Q2 {
     font-size: x-large;
     font-weight: bold;
     color: rgb(154, 12, 12);
     position: absolute; 
     text-align: center;
-}
-
-#Q2 {
     top: 50px;
     color: rgb(50, 48, 47);
     filter: contrast(5);
 }
 
-#check1 {
+#check1,
+#check2 {
+    background-color: white;
     position: absolute;
     top: 85vh;
     left: 40px;
@@ -114,6 +119,16 @@ Options                                                                    |
     border: 1px solid rgb(200, 200, 200);
     border-radius: 3px;
     margin: 0%;
+    font-weight: bold;
+    font-size: large;
+}
+
+#check1 {
+    color: darkgreen;
+}
+
+#check2 {
+    color: rgb(208, 169, 121);
 }
 
 /* Old Code! */
@@ -140,17 +155,24 @@ Options                                                                    |
 
 
 .check_screen {
-    background-color: bisque;
-    border: 2px solid rgb(129, 91, 91);
-    color: brown;
+    border: 0.1px solid;
     text-align: center;
-    position: absolute;
-    padding: 10%;
-    top: 40vh;
-    left: 10px;
-    right: 10px;
-    margin: 0%;
+
+    position: fixed;
+
+    width: 90%;
+    max-width: 500px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+    margin: 0;
+
     display: none;
+
     font-weight: bold;
     font-size: x-large;
 }

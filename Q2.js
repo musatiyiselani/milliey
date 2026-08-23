@@ -1,4 +1,4 @@
-const check_1_button = document.getElementById("check1");
+const check_1_button = document.getElementById("check2");
 const show = document.querySelector(".check_screen");
 const msg = document.getElementById("Q2");
 
@@ -7,7 +7,7 @@ let checked = false;
 check_1_button.addEventListener("click", () => {
 
     if (checked) {
-        window.location.href = "Q1.html";
+        window.location.href = "Q3.html";
         return;
     }
 
@@ -18,24 +18,26 @@ check_1_button.addEventListener("click", () => {
         return;
     }
 
-    if (selected.value === "Mbuyelo") {
+    if (selected.value === "Musa") {
         show.innerHTML = `
-        ${selected.value} ✅
-        You Got It😂
-        It's Obviously The Girl's Bestfriend 💝
+        ${selected.value} ✅ <br>
+        Obviously
         `;
     } else {
         show.innerHTML = `
         ${selected.value} ❌👀?
-        Really??
-        ${msg.innerHTML} -- Mbuyelo
+        Nah??
+        <br>
+        It can only be -- Musa
         `;
     }
 
     show.style.display = "block";
+    show.style.backgroundColor = "bisque"
+    show.style.color = "brown"
 
     document.getElementById("vid1").style.filter = "blur(25px)";
-    document.getElementById("form1").style.filter = "blur(5px)";
+    document.getElementById("form2").style.filter = "blur(5px)";
     document.getElementById("Q2").style.filter = "blur(5px)";
 
     check_1_button.textContent = "Another Message";

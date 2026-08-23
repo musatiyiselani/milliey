@@ -45,5 +45,5 @@ function addNextLine() {
 addNextLine();
 
 button1.addEventListener("click", () => {
-    window.location.href = "Q2.html";
+    window.location.href = "Q1.html";
 });
