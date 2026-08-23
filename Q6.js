@@ -1,13 +1,13 @@
-const check_1_button = document.getElementById("check1");
+const check_1_button = document.getElementById("check6");
 const show = document.querySelector(".check_screen");
-const msg = document.getElementById("Q1");
+const msg = document.getElementById("Q6");
 
 let checked = false;
 
 check_1_button.addEventListener("click", () => {
 
     if (checked) {
-        window.location.href = "Q2.html";
+        window.location.href = "last.html";
         return;
     }
 
@@ -18,30 +18,30 @@ check_1_button.addEventListener("click", () => {
         return;
     }
 
-    if (selected.value === "Fortune") {
+    if (selected.value === "Pfumi") {
         show.innerHTML = `
         ${selected.value} ✅ <br>
-        You Got Her!
+        You got her!
         `;
     } else {
         show.innerHTML = `
         ${selected.value} ❌👀?
-        Really??
+        N0000000000000000!!
         <br>
-        The message is from -- Fortune
+        It's Faith
         `;
     }
 
     show.style.display = "block";
-    show.style.backgroundColor = "yellowgreen";
+    show.style.backgroundColor = "sandybrown"
     show.style.color = "white";
 
-    document.getElementById("picture1").style.filter = "blur(25px)";
-    document.getElementById("form1").style.filter = "blur(5px)";
-    document.getElementById("Q1").style.filter = "blur(5px)";
+    document.getElementById("picture4").style.filter = "blur(25px)";
+    document.getElementById("form6").style.filter = "blur(5px)";
+    document.getElementById("Q6").style.filter = "blur(5px)";
 
     check_1_button.textContent = "Another Message";
-    check_1_button.style.backgroundColor = "yellowgreen";
+    check_1_button.style.backgroundColor = "sandybrown";
     check_1_button.style.color = "white";
 
     checked = true;

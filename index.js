@@ -11,8 +11,8 @@ const story = [
     "So firstly . . .",
     "The rules are simple 👀",
     "You are to receive messages",
-    "Each with a picture of you",
-    "Each pair, message and picture",
+    "Each with a pic/video of you",
+    "Each pair, message and pic/video",
     "Is from a special someone to you",
     "All you have to do is . . .",
 ];
