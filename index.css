@@ -186,6 +186,10 @@ Options                                                                    |
     filter: brightness(0.75);
 }
 
+#pic {
+    filter: blur(0.75px);
+}
+
 #btn1 {
     background-color: rgb(159, 162, 169);
     color: rgb(0, 0, 0);
