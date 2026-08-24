@@ -187,7 +187,7 @@ Options                                                                    |
 }
 
 #pic {
-    filter: blur(0.75px);
+    filter: blur(1px);
 }
 
 #btn1 {
