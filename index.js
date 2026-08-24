@@ -33,7 +33,7 @@ function addNextLine() {
 
         current++;
 
-        setTimeout(addNextLine, 2000);
+        setTimeout(addNextLine, 1750);
 
     } else {
 
