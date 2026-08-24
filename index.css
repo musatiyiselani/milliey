@@ -248,3 +248,274 @@ Check screen                                                               |
     font-weight: bold;
     font-size: x-large;
 }
+
+/* 
+----------------------------------------------------------------------------
+Last Page                                                                   |
+----------------------------------------------------------------------------
+*/
+
+
+#slideshowImage,
+#slideshowVideo {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
+
+    filter: brightness(0.65);
+
+    opacity: 1;
+
+    transition: opacity 1s ease-in-out;
+}
+
+
+#slideshowVideo {
+
+    display: none;
+
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Last Page Overlay                                                           |
+----------------------------------------------------------------------------
+*/
+
+
+.last_overlay {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Message                                                                    |
+----------------------------------------------------------------------------
+*/
+
+
+.last_message {
+
+    width: 95%;
+
+    max-width: 800px;
+
+    background-color: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    backdrop-filter: blur(3px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    text-align: left;
+
+    line-height: 1.6;
+
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Headings                                                                   |
+----------------------------------------------------------------------------
+*/
+
+
+.last_message h1 {
+
+    color: white;
+
+    text-align: center;
+
+    margin-top: 0;
+
+    text-shadow: 2px 2px 5px black;
+
+}
+
+
+.last_message h2 {
+
+    color: white;
+
+    text-align: center;
+
+    font-size: x-large;
+
+    text-shadow: 2px 2px 5px black;
+
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Message text                                                               |
+----------------------------------------------------------------------------
+*/
+
+
+.last_message p {
+
+    font-size: large;
+
+    margin-bottom: 20px;
+
+    text-shadow: 1px 1px 3px black;
+
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Bible verse                                                                |
+----------------------------------------------------------------------------
+*/
+
+
+.bible_verse {
+
+    background-color: rgba(255, 255, 255, 0.12);
+
+    border-left: 5px solid white;
+
+    padding: 15px;
+
+    margin: 25px 0;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+}
+
+
+.bible_verse blockquote {
+
+    font-style: italic;
+
+    font-size: large;
+
+    margin: 15px 5px;
+
+    color: white;
+
+    text-shadow: 1px 1px 3px black;
+
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Final message                                                               |
+----------------------------------------------------------------------------
+*/
+
+
+.final_message {
+
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+
+    text-align: center;
+
+}
+
+
+.final_message h1 {
+
+    font-size: xx-large;
+
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Mobile                                                                      |
+----------------------------------------------------------------------------
+*/
+
+
+@media (max-width: 600px) {
+
+    .last_overlay {
+
+        padding: 20px 10px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .last_message {
+
+        width: 100%;
+
+        padding: 20px 16px;
+
+        margin-top: 10px;
+
+    }
+
+
+    .last_message h1 {
+
+        font-size: xx-large;
+
+    }
+
+
+    .last_message h2 {
+
+        font-size: large;
+
+    }
+
+
+    .last_message p {
+
+        font-size: medium;
+
+        line-height: 1.6;
+
+    }
+
+
+    .bible_verse blockquote {
+
+        font-size: medium;
+
+    }
+
+}
