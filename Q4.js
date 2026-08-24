@@ -1,48 +1,93 @@
 const check_1_button = document.getElementById("check4");
-const show = document.querySelector(".check_screen");
-const msg = document.getElementById("Q4");
+const options = document.querySelectorAll("#form4 .opt4");
 
+let selected = null;
 let checked = false;
 
+
+// Select an option
+options.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Don't allow another selection after checking
+        if (checked) {
+            return;
+        }
+
+        // Reset all buttons
+        options.forEach(option => {
+            option.style.backgroundColor = "";
+            option.style.color = "";
+            option.style.borderColor = "";
+        });
+
+        // Store selected button
+        selected = button;
+
+        // Show selected button
+        selected.style.borderColor = "yellowgreen";
+        selected.style.color = "yellowgreen";
+
+        check_1_button.textContent = "Check";
+    });
+
+});
+
+
+// Check answer
 check_1_button.addEventListener("click", () => {
 
+    // Go to next question
     if (checked) {
         window.location.href = "Q5.html";
         return;
     }
 
-    const selected = document.querySelector('input[name="person"]:checked');
 
-    if(!selected) {
-        console.log("Select a person")
+    // Check if nothing was selected
+    if (!selected) {
+        check_1_button.textContent = "Please select a person first 👀";
         return;
     }
 
+
+    // Correct answer
     if (selected.value === "Lunghile") {
-        show.innerHTML = `
-        ${selected.value} ✅ <br>
-        You got him
-        `;
-    } else {
-        show.innerHTML = `
-        ${selected.value} ❌👀?
-        Yeah nerh??
-        <br>
-        It's Lunghi! 
-        `;
+
+        selected.style.backgroundColor = "green";
+        selected.style.color = "white";
+        selected.style.borderColor = "white";
+
+        check_1_button.textContent = "Another Message";
+
     }
 
-    show.style.display = "block";
-    show.style.backgroundColor = "rgb(190, 50, 125)";
-    show.style.color = "white";
 
-    document.getElementById("vid2").style.filter = "blur(25px)";
-    document.getElementById("form4").style.filter = "blur(5px)";
-    document.getElementById("Q4").style.filter = "blur(5px)";
+    // Wrong answer
+    else {
 
-    check_1_button.textContent = "Another Message";
-    check_1_button.style.backgroundColor = "rgb(190, 50, 125)";
-    check_1_button.style.color = "white";
+        selected.style.backgroundColor = "red";
+        selected.style.color = "black";
+        selected.style.borderColor = "black";
+
+
+        // Show the correct answer
+        options.forEach(option => {
+
+            if (option.value === "Lunghile") {
+
+                option.style.backgroundColor = "yellow";
+                option.style.color = "black";
+                option.style.borderColor = "black";
+
+            }
+
+        });
+
+        check_1_button.textContent = "Another Message";
+    }
+
 
     checked = true;
 });

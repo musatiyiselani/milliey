@@ -22,6 +22,8 @@ body {
 #storyText {
     color: rgb(255, 255, 255);
 }
+
+
 /* 
 ----------------------------------------------------------------------------
 Background stuff                                                           |
@@ -48,12 +50,12 @@ Background stuff                                                           |
     position: relative;
 }
 
+
 /* 
 ----------------------------------------------------------------------------
 Background stuff                                                           |
 ----------------------------------------------------------------------------
 */
-
 
 
 h1,
@@ -81,17 +83,6 @@ Options                                                                    |
     color: rgb(212, 207, 205);
     position: absolute; 
     left: 10px;
-    top: 60vh;
-    filter: brightness(1);
-    filter: contrast(5);
-}
-
-#form1 {
-    font-size: x-large;
-    font-weight: bold;
-    color: rgb(212, 207, 205);
-    position: absolute; 
-    left: 10px;
     top: 70vh;
     filter: brightness(1);
     filter: contrast(5);
@@ -99,11 +90,17 @@ Options                                                                    |
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
-    width: 92.5%;
+    width: 95%;
     height: 10%;
 }
 
-.opt1 {
+
+.opt1,
+.opt2,
+.opt3,
+.opt4,
+.opt5,
+.opt6 {
     font-size: large;
     font-family: 'Times New Roman', Times, serif;
     color: rgb(255, 255, 255);
@@ -112,21 +109,17 @@ Options                                                                    |
     border-radius: 5px;
 }
 
-#form3 {
-    color: rgba(217, 206, 146, 0.96);
-}
-
-#form4 {
-    color: rgb(151, 168, 151);
-}
-
-#form5 {
-    color: rgb(225, 142, 133);
-}
 
 /* 
 ----------------------------------------------------------------------------
 Options                                                                    |
+----------------------------------------------------------------------------
+*/
+
+
+/* 
+----------------------------------------------------------------------------
+Questions                                                                  |
 ----------------------------------------------------------------------------
 */
 
@@ -164,6 +157,17 @@ Options                                                                    |
     color: wheat;
 }
 
+#Q6 {
+    color: white;
+}
+
+
+/* 
+----------------------------------------------------------------------------
+Check buttons                                                              |
+----------------------------------------------------------------------------
+*/
+
 #check1,
 #check2,
 #check3,
@@ -182,23 +186,12 @@ Options                                                                    |
     font-size: large;
 }
 
-#check2 {
-    color: rgb(208, 169, 121);
-}
 
-#check3 {
-    color: black;
-}
-
-#check4 {
-    color: darkred;
-}
-
-#check5 {
-    color: salmon;
-}
-
-/* Old Code! */
+/* 
+----------------------------------------------------------------------------
+Old Code!                                                                  |
+----------------------------------------------------------------------------
+*/
 
 #pic1 {
     /*border: 1px solid Red; /**/
@@ -222,8 +215,16 @@ Options                                                                    |
     top: 80vh;
     padding: 5px;
 }
+
+
 /* Old Code! */
 
+
+/* 
+----------------------------------------------------------------------------
+Check screen                                                               |
+----------------------------------------------------------------------------
+*/
 
 .check_screen {
     border: 0.1px solid;

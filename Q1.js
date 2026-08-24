@@ -1,48 +1,93 @@
 const check_1_button = document.getElementById("check1");
-const show = document.querySelector(".check_screen");
-const msg = document.getElementById("Q1");
+const options = document.querySelectorAll("#form1 .opt1");
 
+let selected = null;
 let checked = false;
 
+
+// Select an option
+options.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Don't allow another selection after checking
+        if (checked) {
+            return;
+        }
+
+        // Reset all buttons
+        options.forEach(option => {
+            option.style.backgroundColor = "";
+            option.style.color = "";
+            option.style.borderColor = "";
+        });
+
+        // Store selected button
+        selected = button;
+
+        // Show selected button
+        selected.style.borderColor = "yellowgreen";
+        selected.style.color = "yellowgreen";
+
+        check_1_button.textContent = "Check";
+    });
+
+});
+
+
+// Check answer
 check_1_button.addEventListener("click", () => {
 
+    // Go to next question
     if (checked) {
         window.location.href = "Q2.html";
         return;
     }
 
-    const selected = document.querySelector('.opt1');
 
-    if(!selected) {
-        console.log("Select a person")
+    // Check if nothing was selected
+    if (!selected) {
+        check_1_button.textContent = "Please select a person first 👀";
         return;
     }
 
+
+    // Correct answer
     if (selected.value === "Fortune") {
-        show.innerHTML = `
-        ${selected.value} ✅ <br>
-        You Got Her!
-        `;
-    } else {
-        show.innerHTML = `
-        ${selected.value} ❌👀?
-        Really??
-        <br>
-        The message is from -- Fortune
-        `;
+
+        selected.style.backgroundColor = "green";
+        selected.style.color = "white";
+        selected.style.borderColor = "white";
+
+        check_1_button.textContent = "Another Message";
+
     }
 
-    show.style.display = "block";
-    show.style.backgroundColor = "yellowgreen";
-    show.style.color = "white";
 
-    document.getElementById("picture1").style.filter = "blur(25px)";
-    document.getElementById("form1").style.filter = "blur(5px)";
-    document.getElementById("Q1").style.filter = "blur(5px)";
+    // Wrong answer
+    else {
 
-    check_1_button.textContent = "Another Message";
-    check_1_button.style.backgroundColor = "yellowgreen";
-    check_1_button.style.color = "white";
+        selected.style.backgroundColor = "red";
+        selected.style.color = "black";
+        selected.style.borderColor = "black";
+
+
+        // Show the correct answer
+        options.forEach(option => {
+
+            if (option.value === "Fortune") {
+
+                option.style.backgroundColor = "yellowgreen";
+                option.style.color = "black";
+                option.style.borderColor = "black";
+
+            }
+
+        });
+
+        check_1_button.textContent = "Another Message";
+    }
+
 
     checked = true;
 });
