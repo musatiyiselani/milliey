@@ -86,6 +86,32 @@ Options                                                                    |
     filter: contrast(5);
 }
 
+#form1 {
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(212, 207, 205);
+    position: absolute; 
+    left: 10px;
+    top: 70vh;
+    filter: brightness(1);
+    filter: contrast(5);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    width: 92.5%;
+    height: 10%;
+}
+
+.opt1 {
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
 #form3 {
     color: rgba(217, 206, 146, 0.96);
 }
@@ -144,20 +170,16 @@ Options                                                                    |
 #check4,
 #check5,
 #check6 {
-    background-color: white;
+    background-color: transparent;
     position: absolute;
-    top: 85vh;
+    top: 82.5vh;
     left: 40px;
     padding: 5px;
-    border: 1px solid rgb(200, 200, 200);
-    border-radius: 3px;
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 5px;
     margin: 0%;
     font-weight: bold;
     font-size: large;
-}
-
-#check1 {
-    color: darkgreen;
 }
 
 #check2 {

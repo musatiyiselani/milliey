@@ -11,7 +11,7 @@ check_1_button.addEventListener("click", () => {
         return;
     }
 
-    const selected = document.querySelector('input[name="person"]:checked');
+    const selected = document.querySelector('.opt1');
 
     if(!selected) {
         console.log("Select a person")
