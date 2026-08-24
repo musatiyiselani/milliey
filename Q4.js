@@ -33,7 +33,7 @@ check_1_button.addEventListener("click", () => {
     }
 
     show.style.display = "block";
-    show.style.backgroundColor = "pink"
+    show.style.backgroundColor = "rgb(190, 50, 125)";
     show.style.color = "white";
 
     document.getElementById("vid2").style.filter = "blur(25px)";
@@ -41,7 +41,7 @@ check_1_button.addEventListener("click", () => {
     document.getElementById("Q4").style.filter = "blur(5px)";
 
     check_1_button.textContent = "Another Message";
-    check_1_button.style.backgroundColor = "pink";
+    check_1_button.style.backgroundColor = "rgb(190, 50, 125)";
     check_1_button.style.color = "white";
 
     checked = true;

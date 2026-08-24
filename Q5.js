@@ -21,7 +21,7 @@ check_1_button.addEventListener("click", () => {
     if (selected.value === "Ntsako") {
         show.innerHTML = `
         ${selected.value} ✅ <br>
-        Yes, hi mina!
+        Yes, you got her!
         `;
     } else {
         show.innerHTML = `

@@ -19,6 +19,9 @@ body {
     position: relative;
 }
 
+#storyText {
+    color: aliceblue;
+}
 /* 
 ----------------------------------------------------------------------------
 Background stuff                                                           |
@@ -92,7 +95,7 @@ Options                                                                    |
 }
 
 #form5 {
-    color: salmon;
+    color: rgb(225, 142, 133);
 }
 
 /* 
@@ -128,7 +131,7 @@ Options                                                                    |
 }
 
 #Q4 {
-    color: rgb(9, 112, 9);
+    color: rgb(32, 141, 32);
 }
 
 #Q5 {
@@ -184,7 +187,7 @@ Options                                                                    |
 }
 
 #btn1 {
-    background-color: rgb(226, 182, 189);
+    background-color: rgb(240, 240, 102);
     color: rgb(57, 12, 51);
     border: 1px solid rgb(246, 168, 181);
     border-radius: 3px;
