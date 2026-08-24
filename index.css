@@ -183,13 +183,13 @@ Options                                                                    |
     width: 90%;
     max-width: 250px;
     border-radius: 2%;
-    filter: brightness(0.8);
+    filter: brightness(0.75);
 }
 
 #btn1 {
-    background-color: rgb(240, 240, 102);
-    color: rgb(57, 12, 51);
-    border: 1px solid rgb(246, 168, 181);
+    background-color: rgb(159, 162, 169);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(159, 162, 169);
     border-radius: 3px;
     margin: 0%;
     position: absolute;
