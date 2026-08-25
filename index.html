@@ -1,38 +1,598 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Millicent</title>
-    <link rel="stylesheet" href="index.css">
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Millicent</title>
+
+<link rel="stylesheet" href="index.css">
+
 </head>
+
 <body>
-    <!--<img class="bckpic" src="./images/backpic.webp">-->
-    <img class="bckpic" id="pic" src="./images/makeupmillie.jpeg">
+
+
+<!-- =========================================================
+     MUSIC
+     ========================================================= -->
+
+<audio
+    id="birthdayMusic"
+    src="./music/audio-1787485224137.mp3.mpeg"
+    loop
+    preload="auto">
+</audio>
+
+
+<!-- =========================================================
+     INTRO
+     ========================================================= -->
+
+<section id="intro" class="screen active">
+
+    <img
+        class="background"
+        src="./images/makeupmillie.jpeg"
+        alt="Millicent"
+    >
 
     <div class="story">
-        <h3 id="storyText">
 
-            <!--
-            Hello Millicent Miyambo . . .❤️<br>
-            Just in case you forgot . . .😄<br>
-            It's your birthday today...🎂🥳<br>
-            So we created this for you...☺️<br>
-            More like a guessing game...🥺<br>
-            So firstly . . .😛<br>
-            The rules are simple . . .👀<br>
-            You are to receive messages...💌<br>
-            Each with a pic/video of you...🤗<br>
-            Each message and pic/video...🥹🫠<br>
-            Is from a special someone to you🙈<br>
-            All you have to do is . . .🤩<br>
-            -->
+        <h3 id="storyText"></h3>
 
-        </h3>
+        <button id="startButton">
+            Guess Who Sent It . . .🥹!
+        </button>
 
-        <button id="btn1">Guess Who Sent It . . .🥹!</button>
     </div>
 
-    <script src="index.js"></script>
+</section>
+
+
+<!-- =========================================================
+     QUESTION 1 — FORTUNE
+     ========================================================= -->
+
+<section id="question1" class="screen">
+
+    <img
+        class="background"
+        src="./images/fortunepic.jpeg"
+        alt=""
+    >
+
+    <h2 class="question q1">
+        ASK
+    </h2>
+
+    <div class="options">
+
+        <button class="option" data-answer="wrong">
+            Pfumi
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Mbuyelo
+        </button>
+
+        <button class="option" data-answer="correct">
+            Fortune
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Ntsako
+        </button>
+
+    </div>
+
+    <button class="checkButton">
+        Check
+    </button>
+
+    <button class="backButton">
+        ← Back
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     QUESTION 2 — KUHLULA
+     ========================================================= -->
+
+<section id="question2" class="screen">
+
+    <video
+        class="background"
+        src="./vids/vid1.mp4"
+        autoplay
+        muted
+        loop
+        playsinline>
+    </video>
+
+    <h2 class="question q2">
+        "ASK"
+    </h2>
+
+    <div class="options">
+
+        <button class="option" data-answer="wrong">
+            Gift
+        </button>
+
+        <button class="option" data-answer="correct">
+            Kuhlula
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Lunghile
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Musa
+        </button>
+
+    </div>
+
+    <button class="checkButton">
+        Check
+    </button>
+
+    <button class="backButton">
+        ← Back
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     QUESTION 3 — MBUYELO
+     ========================================================= -->
+
+<section id="question3" class="screen">
+
+    <img
+        class="background"
+        src="./images/mbuyelopic.jpeg"
+        alt=""
+    >
+
+    <h2 class="question q3">
+        "Finding you will always be the best thing to me🙂‍↕️"
+    </h2>
+
+    <div class="options">
+
+        <button class="option" data-answer="wrong">
+            Pfumi
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Ntsako
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Fortune
+        </button>
+
+        <button class="option" data-answer="correct">
+            Mbuyelo
+        </button>
+
+    </div>
+
+    <button class="checkButton">
+        Check
+    </button>
+
+    <button class="backButton">
+        ← Back
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     QUESTION 4 — LUNGHILE
+     ========================================================= -->
+
+<section id="question4" class="screen">
+
+    <video
+        class="background"
+        src="./vids/lunghilevid.mp4"
+        autoplay
+        muted
+        loop
+        playsinline>
+    </video>
+
+    <h2 class="question q4">
+        ASK
+    </h2>
+
+    <div class="options">
+
+        <button class="option" data-answer="wrong">
+            Gift
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Musa
+        </button>
+
+        <button class="option" data-answer="correct">
+            Lunghile
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Kuhlula
+        </button>
+
+    </div>
+
+    <button class="checkButton">
+        Check
+    </button>
+
+    <button class="backButton">
+        ← Back
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     QUESTION 5 — NTSAKO
+     ========================================================= -->
+
+<section id="question5" class="screen">
+
+    <img
+        class="background"
+        src="./images/ntsakopic.jpeg"
+        alt=""
+    >
+
+    <h2 class="question q5">
+        ASK
+    </h2>
+
+    <div class="options">
+
+        <button class="option" data-answer="correct">
+            Ntsako
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Mbuyelo
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Pfumi
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Musa
+        </button>
+
+    </div>
+
+    <button class="checkButton">
+        Check
+    </button>
+
+    <button class="backButton">
+        ← Back
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     QUESTION 6 — PFUMI
+     ========================================================= -->
+
+<section id="question6" class="screen">
+
+    <img
+        class="background"
+        src="./images/backpic.webp"
+        alt=""
+    >
+
+    <h2 class="question q6">
+
+        "Happy birthday Millicent, on your special day I wish
+        you endless joy, good health, and all the success your
+        heart desires. May your life be filled with beautiful
+        moments, true friends and dreams that come true.
+        You deserve all the love in the world today and
+        always🥳🥳🥳❤️"
+
+    </h2>
+
+    <div class="options">
+
+        <button class="option" data-answer="wrong">
+            Gift
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Mbuyelo
+        </button>
+
+        <button class="option" data-answer="correct">
+            Pfumi
+        </button>
+
+        <button class="option" data-answer="wrong">
+            Musa
+        </button>
+
+    </div>
+
+    <button class="checkButton">
+        Check
+    </button>
+
+    <button class="backButton">
+        ← Back
+    </button>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL PAGE
+     ========================================================= -->
+
+<section id="final" class="screen finalScreen">
+
+    <img
+        id="slideshowImage"
+        src="./images/1.jpeg"
+        alt=""
+    >
+
+    <video
+        id="slideshowVideo"
+        muted
+        playsinline>
+    </video>
+
+
+    <div class="last_overlay">
+
+        <div class="last_message">
+
+            <h1>
+                Happy Birthday, Millicent ❤️🥳
+            </h1>
+
+
+            <!-- =================================================
+                 FORTUNE
+                 ================================================= -->
+
+            <div class="revealed_message fortune_message">
+
+                <h2>
+                    Fortune ❤️
+                </h2>
+
+                <p>
+                    Found you this year and it already feels like a
+                    lifetime of knowing you. Love you dhownnnnnnn 🫂.
+                    Happy birthday
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 NTSAKO
+                 ================================================= -->
+
+            <div class="revealed_message ntsako_message">
+
+                <h2>
+                    Ntsako ❤️
+                </h2>
+
+                <p>
+                    Happy birthday mylove❤️🥳 you've been there through
+                    my worst n my best❤️ thank you for being both friend
+                    and sister at the same time ❤️ life would be so boring
+                    without you 🥰 I'm forever grateful for you and I love
+                    you sarn 🥰❤️.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 LUNGHILE
+                 ================================================= -->
+
+            <div class="revealed_message lunghile_message">
+
+                <h2>
+                    Lunghile ❤️
+                </h2>
+
+                <p>
+                    Happy birthday eka wena murhandziwa daddy vata
+                    tshama vaku rhandzile hi masiku hinkwawu,
+                    ndzi tsakela kuva na munhu wo fana na wena
+                    a vutonwini bya mina, kula uya emhlweni unitisela
+                    leswo tala na ntsako ninga rivali ririrndzu 🙃
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 MUSA
+                 ================================================= -->
+
+            <div class="musa_message">
+
+                <h2>
+                    Musa Tiyiselani ❤️
+                </h2>
+
+                <h2>
+                    If I was given an opportunity to describe you,
+                    Millicent, to a stranger ❤️
+                </h2>
+
+                <p>
+                    I would say, I remember spending some time on Google
+                    searching <strong>"The most beautiful dark-skinned lady
+                    on the planet."</strong> 🥹❤️ It took about 30 minutes of
+                    scrolling through those pictures before it could click
+                    that Google <strong>SURELY</strong> has not met this one
+                    person that I sought. 😂
+                </p>
+
+                <p>
+                    And honestly, beauty would only be the beginning of how
+                    I would describe you. ❤️✨
+                </p>
+
+                <p>
+                    People could do their best at defining kindness; I would
+                    just present Millicent. 🫶🏽 Picture any positive adjective,
+                    then you are to see her floating in your imagination. 🌸
+                    You are one of those people who make it difficult to
+                    explain what makes you special because there is just so
+                    much to say. ❤️
+                </p>
+
+                <p>
+                    Do try not to get me wrong, she is not perfect, far from
+                    perfection, I say. 😂 She is annoying sometimes, I always
+                    have to agree with her when we are arguing, trying her best
+                    to let me call her sister
+                    <strong>(will never happen, by the way).</strong> 😂😂
+                </p>
+
+                <p>
+                    But somehow, even with all that, I wouldn't trade you
+                    for anyone else. ❤️🫂
+                </p>
+
+                <p>
+                    Always there for me in most situations, like calling me
+                    to wake up for an exam. 😂 I have no therapist yet; when
+                    I am in need of one, I call her. 🥹😂 Even a biblical
+                    question I can discuss with her, that is, if I want to.
+                    🙏🏽❤️
+                </p>
+
+                <p>
+                    And if that does not bring an image of you to them,
+                    I do not know what will. 😂❤️
+                </p>
+
+                <p>
+                    I genuinely appreciate having you in my life, and I hope
+                    you never forget how much you mean to the people who love
+                    you. 🫂❤️ You have been a blessing to the people around
+                    you, and I pray that God allows you to experience the same
+                    love, kindness, and happiness that you so freely give to
+                    others. 🙏🏽✨
+                </p>
+
+                <p>
+                    I pray to God that He blesses you with more to life, that
+                    what you always wish for comes to life, and that He
+                    continues to guide you wherever life takes you. 🙏🏽❤️
+                </p>
+
+
+                <div class="bible_verse">
+
+                    <p>
+                        As the Bible says in
+                        <strong>Numbers 6:24–26:</strong>
+                    </p>
+
+                    <blockquote>
+                        "The Lord bless you and keep you; the Lord make His
+                        face shine on you and be gracious to you; the Lord
+                        turn His face toward you and give you peace."
+                    </blockquote>
+
+                    <span>
+                        🙏🏽✨
+                    </span>
+
+                </div>
+
+
+                <p>
+                    That is genuinely one of my wishes for you—not just
+                    today, but throughout your life. ❤️ May God keep you,
+                    protect you, guide you, and give you peace in every
+                    season of your life. 🙏🏽🌷
+                </p>
+
+                <p>
+                    All I want is to wish you
+                    <strong>HAPPY BIRTHDAY, MILLICENT!</strong>
+                    🥳🎂🎉❤️
+                </p>
+
+                <p>
+                    May all the love, joy, happiness, and more things that
+                    you spread come back to you as a
+                    <strong>huge package</strong> from this day and until
+                    forever. 🎁❤️✨
+                </p>
+
+
+                <div class="final_message">
+
+                    <h1>
+                        Happy birthday, Millicent. ❤️🥳🫂
+                    </h1>
+
+                    <p>
+                        May you continue being the beautiful, kind person
+                        that you are. 😂❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINAL PAGE BACK BUTTON -->
+
+    <button class="backButton finalBackButton">
+        ← Back
+    </button>
+
+</section>
+
+
+<script src="index.js"></script>
+
 </body>
+
 </html>

@@ -1,260 +1,446 @@
+/*
+============================================================
+GLOBAL
+============================================================
+*/
+
 * {
     box-sizing: border-box;
 }
 
+
 html,
 body {
+
     margin: 0;
     padding: 0;
+
     width: 100%;
     height: 100%;
-}
 
-body {
-    font-family: 'Times New Roman', Times, serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;  
-    position: relative;
-}
+    background: black;
 
-#storyText {
-    color: rgb(255, 255, 255);
+    font-family:
+        'Times New Roman',
+        Times,
+        serif;
+
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Background stuff                                                           |
-----------------------------------------------------------------------------
+/*
+============================================================
+SCREENS
+============================================================
 */
 
-.bckpic,
-#vid1,
-#vid2 {
+.screen {
+
     position: fixed;
+
     inset: 0;
-    z-index: -1;
+
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: brightness(0.75);
-}
-
-.story {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    position: relative;
-}
-
-
-/* 
-----------------------------------------------------------------------------
-Background stuff                                                           |
-----------------------------------------------------------------------------
-*/
-
-
-h1,
-h2 {
-    text-align: center;
-    color: rgb(68, 9, 120);
-    /*border: 1px solid brown; /**/ 
-}
-
-
-/* 
-----------------------------------------------------------------------------
-Options                                                                    |
-----------------------------------------------------------------------------
-*/
-
-#form1,
-#form2,
-#form3,
-#form4,
-#form5,
-#form6 {
-    font-size: x-large;
-    font-weight: bold;
-    color: rgb(212, 207, 205);
-    position: absolute; 
-    left: 10px;
-    top: 70vh;
-    filter: brightness(1);
-    filter: contrast(5);
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    width: 95%;
-    height: 10%;
-}
-
-
-.opt1,
-.opt2,
-.opt3,
-.opt4,
-.opt5,
-.opt6 {
-    font-size: large;
-    font-family: 'Times New Roman', Times, serif;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-    border: 2px solid;
-    border-radius: 5px;
-}
-
-
-/* 
-----------------------------------------------------------------------------
-Options                                                                    |
-----------------------------------------------------------------------------
-*/
-
-
-/* 
-----------------------------------------------------------------------------
-Questions                                                                  |
-----------------------------------------------------------------------------
-*/
-
-#Q1,
-#Q2,
-#Q3,
-#Q4,
-#Q5,
-#Q6 {
-    font-size: x-large;
-    font-weight: bold;
-    position: absolute; 
-    text-align: center;
-    filter: contrast(5);
-    top: 25px;
-}
-
-#Q1 {
-    color: white;
-}
-
-#Q2 {
-    color: black;
-}
-
-#Q3 {
-    color: rgba(177, 171, 136, 0.96);
-}
-
-#Q4 {
-    color: rgb(32, 141, 32);
-}
-
-#Q5 {
-    color: wheat;
-}
-
-#Q6 {
-    color: white;
-}
-
-
-/* 
-----------------------------------------------------------------------------
-Check buttons                                                              |
-----------------------------------------------------------------------------
-*/
-
-#check1,
-#check2,
-#check3,
-#check4,
-#check5,
-#check6 {
-    background-color: transparent;
-    position: absolute;
-    top: 82.5vh;
-    left: 40px;
-    padding: 5px;
-    border: 2px solid rgb(200, 200, 200);
-    border-radius: 5px;
-    margin: 0%;
-    font-weight: bold;
-    font-size: large;
-}
-
-
-/* 
-----------------------------------------------------------------------------
-Old Code!                                                                  |
-----------------------------------------------------------------------------
-*/
-
-#pic1 {
-    /*border: 1px solid Red; /**/
-    width: 90%;
-    max-width: 250px;
-    border-radius: 2%;
-    filter: brightness(0.75);
-}
-
-#pic {
-    filter: blur(1px);
-}
-
-#btn1 {
-    background-color: rgb(159, 162, 169);
-    color: rgb(0, 0, 0);
-    border: 1px solid rgb(159, 162, 169);
-    border-radius: 3px;
-    margin: 0%;
-    position: absolute;
-    top: 80vh;
-    padding: 5px;
-}
-
-
-/* Old Code! */
-
-
-/* 
-----------------------------------------------------------------------------
-Check screen                                                               |
-----------------------------------------------------------------------------
-*/
-
-.check_screen {
-    border: 0.1px solid;
-    text-align: center;
-
-    position: fixed;
-
-    width: 90%;
-    max-width: 500px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    padding: 20px;
-    margin: 0;
 
     display: none;
 
-    font-weight: bold;
-    font-size: x-large;
+    overflow-y: auto;
+
 }
 
-/* 
-----------------------------------------------------------------------------
-Last Page                                                                   |
-----------------------------------------------------------------------------
+
+.screen.active {
+
+    display: flex;
+
+}
+
+
+/*
+============================================================
+BACKGROUND
+============================================================
 */
 
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
+
+    filter:
+        brightness(0.65);
+
+}
+
+
+/*
+============================================================
+INTRO BLUR
+============================================================
+*/
+
+#intro .background {
+
+    filter:
+        blur(1.5px)
+        brightness(0.65);
+
+    transform:
+        scale(1.02);
+
+}
+
+
+.screen::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.12);
+
+    z-index: -1;
+
+    pointer-events: none;
+
+}
+
+
+/*
+============================================================
+INTRO
+============================================================
+*/
+
+#intro {
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.story {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    position: relative;
+
+}
+
+
+#storyText {
+
+    width: 90%;
+
+    max-width: 650px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: x-large;
+
+    line-height: 1.4;
+
+    text-shadow:
+        2px 2px 5px black,
+        -1px -1px 3px black;
+
+}
+
+
+#storyText p {
+
+    margin: 7px 0;
+
+}
+
+
+/*
+============================================================
+START BUTTON
+============================================================
+*/
+
+#startButton {
+
+    position: absolute;
+
+    top: 80vh;
+
+    padding: 9px 15px;
+
+    background:
+        rgba(159, 162, 169, 0.9);
+
+    color: black;
+
+    border:
+        1px solid
+        rgb(159, 162, 169);
+
+    border-radius: 5px;
+
+    font-family:
+        'Times New Roman',
+        Times,
+        serif;
+
+    font-size: large;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+#startButton:hover {
+
+    background: white;
+
+    transform: scale(1.04);
+
+}
+
+
+/*
+============================================================
+QUESTIONS
+============================================================
+*/
+
+.question {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: x-large;
+
+    font-weight: bold;
+
+    line-height: 1.35;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 5px black;
+
+}
+
+
+.q1,
+.q2,
+.q3,
+.q4,
+.q5,
+.q6 {
+
+    color: white;
+
+}
+
+
+/*
+============================================================
+OPTIONS
+============================================================
+*/
+
+.options {
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 70vh;
+
+    width:
+        calc(100% - 20px);
+
+    height: 10%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 5px;
+
+}
+
+
+.option {
+
+    font-size: large;
+
+    font-family:
+        'Times New Roman',
+        Times,
+        serif;
+
+    color: white;
+
+    background: transparent;
+
+    border:
+        2px solid white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+/*
+============================================================
+CHECK BUTTON
+============================================================
+*/
+
+.checkButton {
+
+    background-color:
+        transparent;
+
+    position: absolute;
+
+    top: 82.5vh;
+
+    left: 40px;
+
+    padding: 6px 10px;
+
+    border:
+        2px solid
+        rgb(200, 200, 200);
+
+    border-radius: 5px;
+
+    color: white;
+
+    margin: 0;
+
+    font-weight: bold;
+
+    font-size: large;
+
+    cursor: pointer;
+
+}
+
+
+/*
+============================================================
+BACK BUTTON
+============================================================
+
+IMPORTANT:
+right: 0 means it touches the actual screen edge.
+
+bottom: 0 means it touches the bottom edge.
+
+============================================================
+*/
+
+.backButton {
+
+    position: fixed;
+
+    right: 0;
+
+    bottom: 0;
+
+    padding:
+        5px 9px;
+
+    background:
+        transparent;
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.75);
+
+    border-radius:
+        4px 0 0 0;
+
+    font-family:
+        'Times New Roman',
+        Times,
+        serif;
+
+    font-size: medium;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+}
+
+
+.backButton:hover {
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+}
+
+
+/*
+============================================================
+FINAL SLIDESHOW
+============================================================
+*/
 
 #slideshowImage,
 #slideshowVideo {
@@ -270,11 +456,14 @@ Last Page                                                                   |
 
     z-index: -2;
 
-    filter: brightness(0.65);
+    filter:
+        brightness(0.65);
 
     opacity: 1;
 
-    transition: opacity 1s ease-in-out;
+    transition:
+        opacity 1s ease-in-out;
+
 }
 
 
@@ -285,12 +474,11 @@ Last Page                                                                   |
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Last Page Overlay                                                           |
-----------------------------------------------------------------------------
+/*
+============================================================
+FINAL OVERLAY
+============================================================
 */
-
 
 .last_overlay {
 
@@ -298,7 +486,8 @@ Last Page Overlay                                                           |
 
     min-height: 100vh;
 
-    padding: 30px 15px;
+    padding:
+        30px 15px;
 
     display: flex;
 
@@ -309,20 +498,14 @@ Last Page Overlay                                                           |
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Message                                                                    |
-----------------------------------------------------------------------------
-*/
-
-
 .last_message {
 
     width: 95%;
 
     max-width: 800px;
 
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color:
+        rgba(255, 255, 255, 0.12);
 
     color: white;
 
@@ -330,11 +513,16 @@ Message                                                                    |
 
     border-radius: 15px;
 
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.4);
 
-    backdrop-filter: blur(3px);
+    backdrop-filter:
+        blur(3px);
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.3);
 
     text-align: left;
 
@@ -343,12 +531,31 @@ Message                                                                    |
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Headings                                                                   |
-----------------------------------------------------------------------------
+/*
+============================================================
+ALL FINAL TEXT WHITE
+============================================================
 */
 
+.last_message,
+.last_message h1,
+.last_message h2,
+.last_message h3,
+.last_message p,
+.last_message span,
+.last_message strong,
+.last_message blockquote {
+
+    color: white;
+
+}
+
+
+/*
+============================================================
+FINAL HEADINGS
+============================================================
+*/
 
 .last_message h1 {
 
@@ -358,7 +565,8 @@ Headings                                                                   |
 
     margin-top: 0;
 
-    text-shadow: 2px 2px 5px black;
+    text-shadow:
+        2px 2px 5px black;
 
 }
 
@@ -371,41 +579,140 @@ Headings                                                                   |
 
     font-size: x-large;
 
-    text-shadow: 2px 2px 5px black;
+    text-shadow:
+        2px 2px 5px black;
 
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Message text                                                               |
-----------------------------------------------------------------------------
+/*
+============================================================
+FINAL TEXT
+============================================================
 */
 
-
 .last_message p {
+
+    color: white;
 
     font-size: large;
 
     margin-bottom: 20px;
 
-    text-shadow: 1px 1px 3px black;
+    text-shadow:
+        1px 1px 3px black;
 
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Bible verse                                                                |
-----------------------------------------------------------------------------
+/*
+============================================================
+REVEALED MESSAGES
+============================================================
 */
 
+.revealed_message {
+
+    margin: 30px 0;
+
+    padding: 20px;
+
+    background-color:
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.revealed_message h2 {
+
+    color: white;
+
+    text-align: center;
+
+    font-size: x-large;
+
+    margin-top: 0;
+
+    text-shadow:
+        2px 2px 5px black;
+
+}
+
+
+.revealed_message p {
+
+    color: white;
+
+    font-size: large;
+
+    text-shadow:
+        1px 1px 3px black;
+
+}
+
+
+/*
+============================================================
+MUSA MESSAGE
+============================================================
+*/
+
+.musa_message {
+
+    margin-top: 40px;
+
+    padding-top: 30px;
+
+    border-top:
+        3px solid
+        rgba(255, 255, 255, 0.6);
+
+}
+
+
+.musa_message h2,
+.musa_message p {
+
+    color: white;
+
+}
+
+
+.musa_message p {
+
+    font-size: large;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        1px 1px 3px black;
+
+}
+
+
+/*
+============================================================
+BIBLE VERSE
+============================================================
+*/
 
 .bible_verse {
 
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color:
+        rgba(255, 255, 255, 0.12);
 
-    border-left: 5px solid white;
+    border-left:
+        5px solid white;
 
     padding: 15px;
 
@@ -414,6 +721,15 @@ Bible verse                                                                |
     text-align: center;
 
     border-radius: 5px;
+
+}
+
+
+.bible_verse p,
+.bible_verse blockquote,
+.bible_verse span {
+
+    color: white;
 
 }
 
@@ -428,17 +744,17 @@ Bible verse                                                                |
 
     color: white;
 
-    text-shadow: 1px 1px 3px black;
+    text-shadow:
+        1px 1px 3px black;
 
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Final message                                                               |
-----------------------------------------------------------------------------
+/*
+============================================================
+FINAL MESSAGE
+============================================================
 */
-
 
 .final_message {
 
@@ -446,7 +762,9 @@ Final message                                                               |
 
     padding-top: 20px;
 
-    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-top:
+        2px solid
+        rgba(255, 255, 255, 0.5);
 
     text-align: center;
 
@@ -457,23 +775,97 @@ Final message                                                               |
 
     font-size: xx-large;
 
+    color: white;
+
 }
 
 
-/* 
-----------------------------------------------------------------------------
-Mobile                                                                      |
-----------------------------------------------------------------------------
-*/
+.final_message p {
 
+    color: white;
+
+}
+
+
+/*
+============================================================
+MOBILE
+============================================================
+*/
 
 @media (max-width: 600px) {
 
+
+    .question {
+
+        font-size: large;
+
+        top: 25px;
+
+    }
+
+
+    .options {
+
+        top: 70vh;
+
+    }
+
+
+    .option {
+
+        font-size: medium;
+
+    }
+
+
+    .checkButton {
+
+        top: 82.5vh;
+
+        left: 40px;
+
+        font-size: medium;
+
+    }
+
+
+    .backButton {
+
+        padding:
+            4px 8px;
+
+        font-size:
+            medium;
+
+    }
+
+
+    #storyText {
+
+        width: 95%;
+
+        font-size: large;
+
+    }
+
+
+    #startButton {
+
+        top: 80vh;
+
+        font-size: medium;
+
+    }
+
+
     .last_overlay {
 
-        padding: 20px 10px;
+        padding:
+            20px 10px;
 
-        align-items: flex-start;
+        align-items:
+            flex-start;
 
     }
 
@@ -482,7 +874,8 @@ Mobile                                                                      |
 
         width: 100%;
 
-        padding: 20px 16px;
+        padding:
+            20px 16px;
 
         margin-top: 10px;
 
@@ -491,30 +884,35 @@ Mobile                                                                      |
 
     .last_message h1 {
 
-        font-size: xx-large;
+        font-size:
+            xx-large;
 
     }
 
 
     .last_message h2 {
 
-        font-size: large;
+        font-size:
+            large;
 
     }
 
 
     .last_message p {
 
-        font-size: medium;
+        font-size:
+            medium;
 
-        line-height: 1.6;
+        line-height:
+            1.6;
 
     }
 
 
     .bible_verse blockquote {
 
-        font-size: medium;
+        font-size:
+            medium;
 
     }
 
