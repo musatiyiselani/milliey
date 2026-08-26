@@ -21,6 +21,7 @@ It survives:
 
 
 const STORAGE_KEY = "millicent_backend_by_ai";
+const STORAGE_VERSION = "2";
 
 
 const defaultData = {
@@ -71,8 +72,27 @@ function loadBackend() {
 
     try {
 
+        const savedVersion =
+            localStorage.getItem("millicent_backend_version");
+
+
+        // If this is a new version,
+        // delete everyone's old saved progress.
+        if (savedVersion !== STORAGE_VERSION) {
+
+            localStorage.removeItem(STORAGE_KEY);
+
+            localStorage.setItem(
+                "millicent_backend_version",
+                STORAGE_VERSION
+            );
+
+        }
+
+
         const saved =
             localStorage.getItem(STORAGE_KEY);
+
 
         if (saved) {
 
@@ -84,6 +104,7 @@ function loadBackend() {
                 JSON.parse(JSON.stringify(defaultData));
 
         }
+
 
     } catch (error) {
 
