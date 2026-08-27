@@ -21,7 +21,7 @@ It survives:
 
 
 const STORAGE_KEY = "millicent_backend_by_ai";
-const STORAGE_VERSION = "2";
+const STORAGE_VERSION = "3";
 
 
 const defaultData = {
@@ -339,7 +339,7 @@ function addNextLine() {
 
         setTimeout(
             addNextLine,
-            1750
+            0
         );
 
     } else {
@@ -367,7 +367,7 @@ startButton.addEventListener(
 
         try {
 
-            music.volume = 1;
+            music.volume = 0.25;
 
             await music.play();
 
