@@ -339,7 +339,7 @@ function addNextLine() {
 
         setTimeout(
             addNextLine,
-            0
+            1750
         );
 
     } else {
