@@ -300,7 +300,9 @@ const story = [
 
     "So firstly . . .😛",
 
-    "The rules are simple . . .👀",
+    "All guesses will be saved...😛",
+
+    "And the rules are simple . . .👀",
 
     "You are to receive messages...💌",
 
